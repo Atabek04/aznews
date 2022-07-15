@@ -1,152 +1,131 @@
 {% extends "main.html" %}
 {% load static %}
 
+
 {% block content %}
 <main>
-	<!-- Start Youtube -->
-	<div class="youtube-area">
-		<div class="container">
-			<!-- Hot Aimated News Tittle-->
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="trending-tittle">
-						<strong>Trending now</strong>
-						<!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-						<div class="trending-animated">
-							<ul id="js-news" class="js-hidden">
-								<li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
-								<li class="news-item">Spondon IT sit amet, consectetur.......</li>
-								<li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-							</ul>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<div class="video-items-active">
-						<div class="video-items text-center">
-							<iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="video-items text-center">
-							<iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="video-items text-center">
-							<iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="video-items text-center">
-							<iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="video-items text-center">
-							<iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="video-info">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="video-caption">
-							<div class="top-caption">
-								<span class="color1">Politics</span>
-							</div>
-							<div class="bottom-caption">
-								<h2>Welcome To The Best Model Winner Contest At Look of the year</h2>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="testmonial-nav text-center">
-							<div class="single-video">
-								<iframe  src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div class="video-intro">
-									<h4>Welcotme To The Best Model Winner Contest</h4>
-								</div>
-							</div>
-							<div class="single-video">
-								<iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div class="video-intro">
-									<h4>Welcotme To The Best Model Winner Contest</h4>
-								</div>
-							</div>
-							<div class="single-video">
-								<iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div class="video-intro">
-									<h4>Welcotme To The Best Model Winner Contest</h4>
-								</div>
-							</div>
-							<div class="single-video">
-								<iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div class="video-intro">
-									<h4>Welcotme To The Best Model Winner Contest</h4>
-								</div>
-							</div>
-							<div class="single-video">
-								<iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div class="video-intro">
-									<h4>Welcotme To The Best Model Winner Contest</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> 
-	 <!-- End Start youtube -->
-	<!-- About US Start -->
-	<div class="about-area">
-		<div class="container">
-				<!-- Hot Aimated News Tittle-->
+     <!--============================== Start youtube =================================-->
+        <div class="youtube-area">
+            <div class="container">
+                <!--=================== Hot Animated News Tittle =================-->
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="trending-tittle">
 							<strong>Trending now</strong>
-							<!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-							<div class="trending-animated">
-								<ul id="js-news" class="js-hidden">
-									<li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
-									<li class="news-item">Spondon IT sit amet, consectetur.......</li>
-									<li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-								</ul>
+							<div class="hwrap">
+								<div class="hmove">
+									{% for news in hot_news %}
+									<div class="hitem">{{ news.title }}</div>
+									{% endfor %}
+							  </div>
 							</div>
-							
 						</div>
 					</div>
 				</div>
+				<!-- ============================================== -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="video-items-active">
+							{% for act_video in act_videos %}
+                            <div class="video-items text-center">
+                                <iframe src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <!-- <div class="video-items text-center">
+                                <iframe  src="https://www.youtube.com/embed/fiH9qrKMe2Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/rlhb4BHF6x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/aKMRivL09mY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/Znhcpqsy6z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div> -->
+							{% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="video-caption">
+                                <div class="top-caption">
+                                    <span class="color1">Lifestyle</span>
+                                </div>
+                                <div class="bottom-caption">
+                                    <h2>Telegramda 1 million obunachisi bor, 3D Max orqali uyquda ham daromad qiladigan IT tadbirkor</h2>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis recusandae, labore qui minima in eum repellat libero nam voluptate? Non architecto distinctio, veniam fugit veritatis vero, ducimus rem quis aliquam nihil nobis, incidunt ut. Numquam veritatis ad eveniet sequi fugiat?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testmonial-nav text-center">
+								{% for act_video in act_videos %}
+                                <div class="single-video">
+                                    <iframe  src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>{{ act_video.title }}</h4>
+                                    </div>
+                                </div>
+								{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!--============================== End youtube =================================-->
+	<!-- About US Start -->
+	<div class="about-area">
+		<div class="container">
+				<!--=================== Hot Animated News Tittle =================-->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="trending-tittle">
+							<strong>Trending now</strong>
+							<div class="hwrap">
+								<div class="hmove">
+									{% for news in hot_news %}
+									<div class="hitem">{{ news.title }}</div>
+									{% endfor %}
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
 			   <div class="row">
 					<div class="col-lg-8">
-						<!-- Trending Tittle -->
+						<!--========================== Trending Tittle ========================-->
+						{% for trend in trend_text %}
 						<div class="about-right mb-90">
 							<div class="about-img">
 								<img src="{% static 'img/trending/trending_top.jpg' %}" alt="">
 							</div>
 							<div class="section-tittle mb-30 pt-30">
-								<h3>Here come the moms in space</h3>
+								<h3>{{ trend.title }}</h3>
 							</div>
 							<div class="about-prea">
-								<p class="about-pera1 mb-25">Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
-								<p class="about-pera1 mb-25">Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
-								<p class="about-pera1 mb-25">
-									My hero when I was a kid was my mom. Same for everyone I knew. Moms are untouchable. They’re elegant, smart, beautiful, kind…everything we want to be. At 29 years old, my favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top, makes me so proud of how far I’ve come, and so thankful for where I come from.
-									the refractor telescope uses a convex lens to focus the light on the eyepiece.
-									The reflector telescope has a concave lens which means it telescope sits on. The mount is the actual tripod and the wedge is the device that lets you attach the telescope to the mount.
-									Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
+								<p>{{ trend.paragraph }}</p>
 							</div> 
-							<div class="section-tittle">
-								<h3>Unordered list style?</h3>
-							</div>
+						{% endfor %}
 							<div class="social-share pt-30">
 								<div class="section-tittle">
 									<h3 class="mr-20">Share:</h3>
+									{% for follows in followers %}
 									<ul>
-										<li><a href="#"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a></li>
-										<li><a href="#"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a></li>
-										<li><a href="#"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a></li>
-										<li><a href="#"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a></li>
+										<li><a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a></li>
+										<li><a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a></li>
+										<li><a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a></li>
+										<li><a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a></li>
 									</ul>
+									{% endfor %}
 								</div>
 							</div>
 						</div>
@@ -188,45 +167,47 @@
 						<div class="section-tittle mb-40">
 							<h3>Follow Us</h3>
 						</div>
-						<!-- Flow Socail -->
+						<!--============== Flow Social ==============-->
 						<div class="single-follow mb-45">
 							<div class="single-box">
+							   {% for follows in followers %}
 								<div class="follow-us d-flex align-items-center">
 									<div class="follow-social">
-										<a href="#"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a>
+										<a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a>
 									</div>
 									<div class="follow-count">  
-										<span>8,045</span>
+										<span>{{ follows.facebook }}</span>
 										<p>Fans</p>
 									</div>
 								</div> 
 								<div class="follow-us d-flex align-items-center">
 									<div class="follow-social">
-										<a href="#"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a>
+										<a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a>
 									</div>
 									<div class="follow-count">
-										<span>8,045</span>
+										<span>{{ follows.twitter }}</span>
 										<p>Fans</p>
 									</div>
 								</div>
 									<div class="follow-us d-flex align-items-center">
 									<div class="follow-social">
-										<a href="#"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a>
+										<a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a>
 									</div>
 									<div class="follow-count">
-										<span>8,045</span>
+										<span>{{ follows.instagram }}</span>
 										<p>Fans</p>
 									</div>
 								</div>
 								<div class="follow-us d-flex align-items-center">
 									<div class="follow-social">
-										<a href="#"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a>
+										<a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a>
 									</div>
 									<div class="follow-count">
-										<span>8,045</span>
+										<span>{{ follows.youtube }}</span>
 										<p>Fans</p>
 									</div>
 								</div>
+							   {% endfor %}
 							</div>
 						</div>
 						<!-- New Poster -->
