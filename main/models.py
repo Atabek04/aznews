@@ -12,6 +12,8 @@ class Categories(models.Model):
 	def __str__(self):
 		return self.category
 
+
+
 class Banner(models.Model):
 	poster = models.ImageField()
 	
@@ -90,4 +92,5 @@ class About_us(models.Model):
 	msg = "Don't create another object, just edit!"
 	def __str__(self):
 		return self.msg
+# ====================================================
 
