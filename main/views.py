@@ -9,9 +9,13 @@ def index(request):
 
 def about(request):
 	about_us = About_us.objects.all()	
+	hot_news = HotNews.objects.all()
+	followers = Followers.objects.all()	
 	
 	context = {
-		'about_us': about_us
+		'about_us': about_us,
+		'hot_news': hot_news,
+		'followers':followers,
 	}
 	return render(request, 'about.html', context)
 
@@ -29,17 +33,22 @@ def category(request):
 
 def contact(request):
 	contacts = Contact.objects.all()
-	hot_news = HotNews.objects.all()
-	followers = Followers.objects.all()
 	context = {
 		'contacts':contacts,
-		'hot_news': hot_news,
-		'followers':followers,
 	}
 	return render(request, 'contact.html', context)
 
 def details(request):
-	return render(request, 'details.html')
+	about_us = About_us.objects.all()
+	hot_news = HotNews.objects.all()
+	followers = Followers.objects.all()	
+
+	context = {
+		'followers':followers,
+		'hot_news': hot_news,
+		'about_us': about_us
+	}
+	return render(request, 'details.html', context)
 
 def elements(request):
 	return render(request, 'elements.html')
