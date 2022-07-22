@@ -1,85 +1,10 @@
 {% extends "main.html" %}
 {% load static %}
-
-
 {% block content %}
-<main>
-     <!--============================== Start youtube =================================-->
-        <div class="youtube-area">
-            <div class="container">
-                <!--=================== Hot Animated News Tittle =================-->
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="trending-tittle">
-							<strong>Trending now</strong>
-							<div class="hwrap">
-								<div class="hmove">
-									{% for news in hot_news %}
-									<div class="hitem">{{ news.title }}</div>
-									{% endfor %}
-							  </div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- ============================================== -->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="video-items-active">
-							{% for act_video in act_videos %}
-                            <div class="video-items text-center">
-                                <iframe src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <!-- <div class="video-items text-center">
-                                <iframe  src="https://www.youtube.com/embed/fiH9qrKMe2Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/rlhb4BHF6x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/aKMRivL09mY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/Znhcpqsy6z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div> -->
-							{% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="video-caption">
-                                <div class="top-caption">
-                                    <span class="color1">Lifestyle</span>
-                                </div>
-                                <div class="bottom-caption">
-                                    <h2>Telegramda 1 million obunachisi bor, 3D Max orqali uyquda ham daromad qiladigan IT tadbirkor</h2>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis recusandae, labore qui minima in eum repellat libero nam voluptate? Non architecto distinctio, veniam fugit veritatis vero, ducimus rem quis aliquam nihil nobis, incidunt ut. Numquam veritatis ad eveniet sequi fugiat?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="testmonial-nav text-center">
-								{% for act_video in act_videos %}
-                                <div class="single-video">
-                                    <iframe  src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>{{ act_video.title }}</h4>
-                                    </div>
-                                </div>
-								{% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <!--============================== End youtube =================================-->
-	<!-- About US Start -->
-	<div class="about-area">
-		<div class="container">
+	<main>
+		<!--============================== Start youtube =================================-->
+		<div class="youtube-area">
+			<div class="container">
 				<!--=================== Hot Animated News Tittle =================-->
 				<div class="row">
 					<div class="col-lg-12">
@@ -88,43 +13,110 @@
 							<div class="hwrap">
 								<div class="hmove">
 									{% for news in hot_news %}
-									<div class="hitem">{{ news.title }}</div>
+										<div class="hitem">{{ news.title }}</div>
 									{% endfor %}
-							  </div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
-
-
-
-			   <div class="row">
+				<!-- ============================================== -->
+				<div class="row">
+					<div class="col-12">
+						<div class="video-items-active">
+							{% for act_video in act_videos %}
+								<div class="video-items text-center">
+									<iframe src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<!-- <div class="video-items text-center">
+									<iframe  src="https://www.youtube.com/embed/fiH9qrKMe2Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="video-items text-center">
+									<iframe src="https://www.youtube.com/embed/rlhb4BHF6x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="video-items text-center">
+									<iframe src="https://www.youtube.com/embed/aKMRivL09mY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="video-items text-center">
+									<iframe src="https://www.youtube.com/embed/Znhcpqsy6z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div> -->
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="video-info">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="video-caption">
+								<div class="top-caption">
+									<span class="color1">Lifestyle</span>
+								</div>
+								<div class="bottom-caption">
+									<h2>Telegramda 1 million obunachisi bor, 3D Max orqali uyquda ham daromad qiladigan IT tadbirkor</h2>
+									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis recusandae, labore qui minima in eum repellat libero nam voluptate? Non architecto distinctio, veniam fugit veritatis vero, ducimus rem quis aliquam nihil nobis, incidunt ut. Numquam veritatis ad eveniet sequi fugiat?</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="testmonial-nav text-center">
+								{% for act_video in act_videos %}
+									<div class="single-video">
+										<iframe  src="{{ act_video.source }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<div class="video-intro">
+											<h4>{{ act_video.title }}</h4>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--============================== End youtube =================================-->
+		<!-- About US Start -->
+		<div class="about-area">
+			<div class="container">
+				<!--=================== Hot Animated News Tittle =================-->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="trending-tittle">
+							<strong>Trending now</strong>
+							<div class="hwrap">
+								<div class="hmove">
+									{% for news in hot_news %}
+										<div class="hitem">{{ news.title }}</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-8">
-						<!--========================== Trending Tittle ========================-->
+						<!--========================== Trending Tittle ========================fig,-->
 						{% for trend in trend_text %}
-						<div class="about-right mb-90">
-							<div class="about-img">
-								<img src="{% static 'img/trending/trending_top.jpg' %}" alt="">
-							</div>
-							<div class="section-tittle mb-30 pt-30">
-								<h3>{{ trend.title }}</h3>
-							</div>
-							<div class="about-prea">
-								<p>{{ trend.paragraph }}</p>
-							</div> 
-						{% endfor %}
+							<div class="about-right mb-90">
+								<div class="about-img">
+									<img src="../static/img/{{trend.image}}" alt="">
+								</div>
+								<div class="section-tittle mb-30 pt-30">
+									<h3>{{ trend.title }}</h3>
+								</div>
+								<div class="about-prea">
+									<p>{{ trend.paragraph }}</p>
+								</div>
+							{% endfor %}
 							<div class="social-share pt-30">
 								<div class="section-tittle">
 									<h3 class="mr-20">Share:</h3>
 									{% for follows in followers %}
-									<ul>
-										<li><a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a></li>
-										<li><a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a></li>
-										<li><a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a></li>
-										<li><a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a></li>
-									</ul>
+										<ul>
+											<li><a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a></li>
+											<li><a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a></li>
+											<li><a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a></li>
+											<li><a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a></li>
+										</ul>
 									{% endfor %}
 								</div>
 							</div>
@@ -170,54 +162,57 @@
 						<!--============== Flow Social ==============-->
 						<div class="single-follow mb-45">
 							<div class="single-box">
-							   {% for follows in followers %}
-								<div class="follow-us d-flex align-items-center">
-									<div class="follow-social">
-										<a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a>
-									</div>
-									<div class="follow-count">  
-										<span>{{ follows.facebook }}</span>
-										<p>Fans</p>
-									</div>
-								</div> 
-								<div class="follow-us d-flex align-items-center">
-									<div class="follow-social">
-										<a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a>
-									</div>
-									<div class="follow-count">
-										<span>{{ follows.twitter }}</span>
-										<p>Fans</p>
-									</div>
-								</div>
+								{% for follows in followers %}
 									<div class="follow-us d-flex align-items-center">
-									<div class="follow-social">
-										<a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a>
+										<div class="follow-social">
+											<a href="{{follows.link_facebook}}"><img src="{% static 'img/news/icon-fb.png' %}" alt=""></a>
+										</div>
+										<div class="follow-count">
+											<span>{{ follows.facebook }}</span>
+											<p>Fans</p>
+										</div>
 									</div>
-									<div class="follow-count">
-										<span>{{ follows.instagram }}</span>
-										<p>Fans</p>
+									<div class="follow-us d-flex align-items-center">
+										<div class="follow-social">
+											<a href="{{follows.link_twitter}}"><img src="{% static 'img/news/icon-tw.png' %}" alt=""></a>
+										</div>
+										<div class="follow-count">
+											<span>{{ follows.twitter }}</span>
+											<p>Fans</p>
+										</div>
 									</div>
-								</div>
-								<div class="follow-us d-flex align-items-center">
-									<div class="follow-social">
-										<a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a>
+									<div class="follow-us d-flex align-items-center">
+										<div class="follow-social">
+											<a href="{{follows.link_instagram}}"><img src="{% static 'img/news/icon-ins.png' %}" alt=""></a>
+										</div>
+										<div class="follow-count">
+											<span>{{ follows.instagram }}</span>
+											<p>Fans</p>
+										</div>
 									</div>
-									<div class="follow-count">
-										<span>{{ follows.youtube }}</span>
-										<p>Fans</p>
+									<div class="follow-us d-flex align-items-center">
+										<div class="follow-social">
+											<a href="{{follows.link_youtube}}"><img src="{% static 'img/news/icon-yo.png' %}" alt=""></a>
+										</div>
+										<div class="follow-count">
+											<span>{{ follows.youtube }}</span>
+											<p>Fans</p>
+										</div>
 									</div>
-								</div>
-							   {% endfor %}
+								{% endfor %}
 							</div>
 						</div>
-						<!-- New Poster -->
+						<!--============= Banner ===========-->
 						<div class="news-poster d-none d-lg-block">
-							<img src="{% static 'img/news/news_card.jpg' %}" alt="">
+							{% for poster in posters %}
+								<img src="../static/img/{{ poster.image }}" alt="">
+							{% endfor %}
 						</div>
+						
 					</div>
-			   </div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<!-- About US End -->
-</main>
+		<!-- About US End -->
+	</main>
 {% endblock content %}
