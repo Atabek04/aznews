@@ -2,7 +2,7 @@ from multiprocessing import context
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from main.models import SingleBlog, InstaFeeds, Categories, RecentPost, BlogPost, RecentArticles, WeelkyTopNews2, WeelkyTopNews, TrendRight, TrendTop, TrendBottom, About_us, WnCards, Followers, Contact, Active_video, HotNews, TrendingArticle, Banner
-
+from django.core.paginator import Paginator
 
 def index(request):
 	hot_news = HotNews.objects.all()
@@ -62,11 +62,19 @@ def blog(request):
 	return render(request, 'blog.html', context)
 
 def category(request):
-	cards = WnCards.objects.all()
+	current_page = int(request.Get.get('page', 1))
+
+	limit = 3
+	stop = current_page * limit
+	start = stop - limit
+
+	card_list = WnCards.objects.all()[start:stop]
+
+
 	followers = Followers.objects.all()
 	posters = Banner.objects.all()
 	context = {
-		'cards' : cards,
+		'card_list':card_list,
 		'followers':followers,
 		'posters':posters
 	}
@@ -120,3 +128,4 @@ def single_blog(request):
 
 def not_found(request, exeption):
 	return render(request, '404error.html')
+

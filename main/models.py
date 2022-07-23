@@ -85,6 +85,7 @@ class TrendingArticle(models.Model):
 # ====================================================
 
 
+
 # ================ About Page ======================
 class About_us(models.Model):
 	image = models.ImageField(blank=True,null=True)
