@@ -101,7 +101,7 @@ class About_us(models.Model):
 class TrendTop(models.Model):
 	category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True, blank=True)
 	title = models.CharField(max_length=200)
-	image = models.ImageField(blank = True, null = True)
+	image = models.ImageField(null=True)
 
 	def __str__(self):
 		return self.title
@@ -180,9 +180,13 @@ class SingleBlog(models.Model):
 	image = models.ImageField(null=True, blank=True)
 	title = models.CharField(max_length=200)
 	category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True, blank=True)
-	date = models.DateTimeField(auto_now_add=True)
+	date = models.DateTimeField(auto_now_add=True, blank=True)
 	text1 = models.TextField(max_length=800)
 	text2 = models.TextField(max_length=800)
 	blockquote = models.TextField(max_length=400)
 
+class PersonalQuote(models.Model):
+	image = models.ImageField(null=True, blank=True)
+	name = models.CharField(max_length=300)
+	quote = models.TextField(max_length=500)
 	

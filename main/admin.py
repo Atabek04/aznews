@@ -27,7 +27,7 @@ class AboutUsAdmin(admin.ModelAdmin):
 
 class TrendingArticleAdmin(admin.ModelAdmin):
 	pass
-
+PersonalQuote
 class TrendBottomAdmin(admin.ModelAdmin):
 	pass
 
@@ -56,6 +56,9 @@ class InstaFeedsAdmin(admin.ModelAdmin):
 	pass
 
 class SingleBlogAdmin(admin.ModelAdmin):
+	pass
+
+class PersonalQuoteAdmin(admin.ModelAdmin):
 	pass
 
 

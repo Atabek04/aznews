@@ -62,13 +62,11 @@ def blog(request):
 	return render(request, 'blog.html', context)
 
 def category(request):
-	current_page = int(request.Get.get('page', 1))
+	print("salom")
+	print(request.POST)
+	card_list = WnCards.objects.all()
+	# Pagination
 
-	limit = 3
-	stop = current_page * limit
-	start = stop - limit
-
-	card_list = WnCards.objects.all()[start:stop]
 
 
 	followers = Followers.objects.all()
@@ -119,9 +117,13 @@ def latest_news(request):
 
 def single_blog(request):
 	single_blog = SingleBlog.objects.all()
+	instafeeds = InstaFeeds.objects.all()
+	categories = Categories.objects.all()
 
 	context = {
 		'single_blog':single_blog,
+		'instafeeds':instafeeds,
+		'categories':categories
 	}
 	return render(request, 'single-blog.html', context)
 
