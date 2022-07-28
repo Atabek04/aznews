@@ -62,19 +62,40 @@ def blog(request):
 	return render(request, 'blog.html', context)
 
 def category(request):
-	print("salom")
-	print(request.POST)
-	card_list = WnCards.objects.all()
+	print(request.GET)
+	start = 0
+	limit = 3
+	stop = limit
+	
 	# Pagination
+	current_page = int(float(request.GET.get('page', 1)))
+	limit = int(request.GET.get('limit', 3))
+	print("current page: ", current_page)
+
+	stop = limit * current_page
+	start = stop - limit
+
+	prev_page =  current_page - 1
+	next_page = 0
+
+	total = WnCards.objects.count()
+
+	if total > stop:
+		next_page = current_page + 1
 
 
-
+	card_list = WnCards.objects.all()[start:stop]
 	followers = Followers.objects.all()
 	posters = Banner.objects.all()
 	context = {
 		'card_list':card_list,
 		'followers':followers,
-		'posters':posters
+		'posters':posters,
+		'current_page': current_page,
+		'prev_page':prev_page,
+		'next_page':next_page,
+		'limit':limit,
+
 	}
 	return render(request, 'category.html', context)
 

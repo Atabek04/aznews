@@ -119,13 +119,28 @@
 		 </div>
 	 </section>
 	 <!--==================== Whats New End =========================-->
- 
-
-
-
-
-	 <!--======================= Start pagination ======================-->
-	 {% include "pagination.html" %}
+	 <div class="pagination-area pb-45 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="single-wrap d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                            	{% if prev_page > 0 %}
+									<li class="page-item"><a class="page-link" href="/category/?page={{prev_page}}&limit={{limit}}">&#8592</a></li>                                
+                            	{% endif %}
+                                <li class="page-item active"><a class="page-link" href="category/?page={{current_page}}&limit={{limit}}">{{current_page}}</a></li>
+                                {% if next_page > 0 %}
+                                    <li class="page-item"><a class="page-link" href="/category/?page={{next_page}}&limit={{limit}}">&#8594</a></li>
+                                {% endif %}
+                            </ul>
+                          </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 	 <!--====================== End pagination  ========================-->
 	 </main>
 {% endblock content %}
